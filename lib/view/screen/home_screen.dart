@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
           title: Obx(()=>Text('${x.toString()}')),
         ),
         body: controller.isLoading
-            ?CircularProgressIndicator()
+            ?Center(child: CircularProgressIndicator())
             : ListView.builder(
                 shrinkWrap: true,
                 itemCount: controller.photoList.length,
