@@ -1,15 +1,17 @@
+import 'dart:isolate';
+
 import 'package:get/get.dart';
 import 'package:paioneers_task/model/photo.dart';
 import 'package:paioneers_task/repository/home_repository.dart' as homeRepo;
 
-class HomeController extends GetxController {
+class HomeViewModel extends GetxController {
   List<Photo> photoList = [];
   bool isLoading = false;
 
   fetchPhotos() async {
     isLoading = true;
     update();
-    await homeRepo.fetchPhoto().then((value) {
+    await homeRepo.getPhoto().then((value) {
       photoList = value;
       isLoading = false;
     });
@@ -21,4 +23,5 @@ class HomeController extends GetxController {
     fetchPhotos();
     super.onInit();
   }
+
 }

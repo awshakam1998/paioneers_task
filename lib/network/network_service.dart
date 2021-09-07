@@ -9,7 +9,6 @@ class NetworkStatusService {
 
    NetworkStatusService() {
     Connectivity().onConnectivityChanged.listen((status) {
-      print('dshfdwqs');
       networkStatusController.add(_getNetworkStatus(status));
     });
   }
