@@ -16,12 +16,12 @@ class User {
   });
 
   bool success;
-  Data data;
+  UserData data;
   String message;
 
   factory User.fromJson(Map<String, dynamic> json) => User(
     success: json["success"] == null ? null : json["success"],
-    data: json["data"] == null ? null : Data.fromJson(json["data"]),
+    data: json["data"] == null ? null : UserData.fromJson(json["data"]),
     message: json["message"] == null ? null : json["message"],
   );
 
@@ -32,8 +32,8 @@ class User {
   };
 }
 
-class Data {
-  Data({
+class UserData {
+  UserData({
     this.id,
     this.name,
     this.email,
@@ -81,7 +81,7 @@ class Data {
   bool hasMedia;
   List<Media> media;
 
-  factory Data.fromJson(Map<String, dynamic> json) => Data(
+  factory UserData.fromJson(Map<String, dynamic> json) => UserData(
     id: json["id"] == null ? null : json["id"],
     name: json["name"] == null ? null : json["name"],
     email: json["email"] == null ? null : json["email"],
